@@ -1,0 +1,63 @@
+<% layout('layouts/boilerplate') %> 
+<div class="container d-flex flex-column justify-content-center align-items-center mt-5">
+    <h1 class="text-center mb-5">New Campground</h1>     
+    <div class="col-md-6">
+        <div class="card shadow mx-auto " style="width: 90%">
+            <div class="card-body">
+            <form action="/campgrounds" method="POST" class="validated-form" novalidate enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <!-- use campground[title] because it can send the data to the campground if there are multiple database -->
+                    <input class="form-control" type="text" id="title" name="campground[title]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="campground[location]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price">Campground Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input type="text" id="price" class="form-control" placeholder="0.00" aria-label="Price" aria-describedby="price-label" name="campground[price]" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+            
+                
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="campground[description]" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <!-- image -->
+                <div class="mb-3 custom-file">
+                    <label for="image" class="form-label">Add Image</label>
+                    <input class="form-control custom-file-label" type="file" name="image" id="image" multiple>
+                </div>
+                
+                <div class="mb-3">
+                    <button class="btn btn-success">Add Campground</button>
+                </div>
+            
+            </form>
+            <a href="/campgrounds">All Camgrounds</a>
+        
+            </div>
+        </div>
+        </div>
+</div>
+
+
+
+    
